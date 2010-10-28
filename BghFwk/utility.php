@@ -26,9 +26,9 @@ declare(ENCODING = 'utf-8');
  *
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-function bghfwk_autoload($clazz)
+/*function bghfwk_autoload($clazz)
 {
-    if ($clazz == 'F3\BghFwk\Package\PackageManager')
+    if ($clazz == 'BghFwk\Package\PackageManager')
     {
         require_once(__DIR__.'/PackageManager.php');
         return true;
@@ -36,7 +36,7 @@ function bghfwk_autoload($clazz)
     return false;
 }
 
-spl_autoload_register('bghfwk_autoload');
+spl_autoload_register('bghfwk_autoload');*/
 
 $wsroot = getenv('FLOW3_WORKSPACE_ROOT');
 $prjname = getenv('FLOW3_PROJECT_NAME');
@@ -51,6 +51,11 @@ foreach (explode(";", $prjdeps) as $prjdep)
 define('FLOW3_PATH_CONFIGURATION', "$wsroot/$prjname/Configuration/");
 define('FLOW3_PATH_DATA', "$wsroot/$prjname/Data/");
 define('FLOW3_PATH_PACKAGES_ADDITIONAL', implode(';', $pkgdirs));
+
+// fixes a problem that BaseTestClass does not find vfs...
+set_include_path(
+    dirname(__DIR__)."/Packages/Framework/PHPUnit/Resources/PHP".
+    PATH_SEPARATOR. get_include_path());
 
 unset($wsroot);
 unset($prjname);
