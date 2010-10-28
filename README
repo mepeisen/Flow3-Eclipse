@@ -1,0 +1,22 @@
+This is only a dummy framework project; it will be used to let eclipse find the framework at one location rather in every single project.
+
+Usage:
+1) check out into your eclipse workspace
+2) create your FLOW3 project using the standard FLOW3 layout (do not add the framework itself)
+3) create a .htaccess in your project root (see below)
+4) add the line require($rootPath.'BghFwk/utility.php'); right before loading FLOW3.php in the Web/index.php
+
+
+Sample for .htaccess in the project directory:
+
+SetEnv FLOW3_CONTEXT Development
+SetEnv FLOW3_ROOTPATH ../../com_bghosting_flow3_devfwkflow3
+SetEnv FLOW3_WORKSPACE_ROOT ../..
+SetEnv FLOW3_PROJECT_NAME foo-project
+SetEnv FLOW3_PROJECT_DEPENDENCIES dep1;dep2
+
+
+FLOW3_ROOTPATH points to the framework project
+FLOW3_WORKSPACE_ROOT points to the workspace root (as seen from Web directory)
+FLOW3_PROJECT_NAME is the name of your current project where the htaccess is located
+FLOW3_PROJECT_DEPENDENCIES is a list of projects that is checked out into the workspace; the utility will load the packages of those projects additional to the framework.
