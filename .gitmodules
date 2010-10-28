@@ -1,0 +1,3 @@
+[submodule "Packages/FLOW3"]
+	path = Packages/FLOW3
+	url = git://git.typo3.org/FLOW3/Packages/FLOW3.git
