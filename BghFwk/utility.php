@@ -51,6 +51,7 @@ foreach (explode(";", $prjdeps) as $prjdep)
 define('FLOW3_PATH_CONFIGURATION', "$wsroot/$prjname/Configuration/");
 define('FLOW3_PATH_DATA', "$wsroot/$prjname/Data/");
 define('FLOW3_PATH_PACKAGES_ADDITIONAL', implode(';', $pkgdirs));
+define('FLOW3_WORKSPACE_ROOT', $wsroot);
 
 // fixes a problem that BaseTestClass does not find vfs...
 set_include_path(
