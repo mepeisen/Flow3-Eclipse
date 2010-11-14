@@ -22,6 +22,3 @@
 [submodule "Packages/Framework/Welcome"]
 	path = Packages/Framework/Welcome
 	url = git://git.typo3.org/FLOW3/Packages/Welcome.git
-[submodule "Packages/Framework/PHPUnit"]
-	path = Packages/Framework/PHPUnit
-	url = git://git.typo3.org/FLOW3/Packages/PHPUnit.git
